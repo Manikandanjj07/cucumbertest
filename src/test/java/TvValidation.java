@@ -27,13 +27,17 @@ public class TvValidation {
 		driver = new ChromeDriver();
 		driver.get("https://www.flipkart.com/");
 		driver.manage().window().maximize();
+	    driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+
 	}
 	String name="";
 	
 	@Given("sigin {string}, {string}")
 	public void sigin(String str1, String str2) {
-	    driver.findElement(By.xpath("(//div/input[@type='text'])[2]")).sendKeys(str1,Keys.TAB);
-	    driver.findElement(By.xpath("//div/input[@type='password']")).sendKeys(str2,Keys.ENTER);
+	  /*  driver.findElement(By.xpath("(//div/input[@type='text'])[2]")).sendKeys(str1,Keys.TAB);
+	    driver.findElement(By.xpath("//div/input[@type='password']")).sendKeys(str2,Keys.ENTER); */
+
+		driver.findElement(By.xpath("//button[text()='✕']")).click();
 	    driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 	}
 
@@ -48,8 +52,8 @@ public class TvValidation {
 
 	@When("clicking tv")
 	public void clicking_tv() {
-		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-	 	//driver.findElement(By.xpath("//span[text()='Filters']")).click();
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+	 	driver.findElement(By.xpath("//span[text()='Filters']")).click();
 	 	System.out.println("SWITCHING TAB");
 	 	driver.findElement(By.xpath("(//a//div//div//div[contains(text(),'"+name+"')])[1]")).click();
 	 	}
@@ -64,6 +68,7 @@ public class TvValidation {
 
 	 	JavascriptExecutor js =(JavascriptExecutor)driver;
 	 		js.executeScript("window.scrollBy(0,1000)");
+	 		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 	 	if(name.equalsIgnoreCase("Vu"))
 	 	{
 	  	TakesScreenshot ts =(TakesScreenshot)driver;
@@ -85,7 +90,7 @@ public class TvValidation {
 	}
 
 	@Then("browser closee")
-	public void browser_close() {
+	public void browser_closee() {
 		driver.quit();
 }
 

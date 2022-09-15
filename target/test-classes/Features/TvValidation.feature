@@ -22,7 +22,7 @@ Feature: TV Validation Feature
 
   Scenario Outline: TV Validation scenario
     Given Flipkart launch
-    And sigin "9842642468", "Prajinkuti"
+    And sigin "9842642468", "aa"
     When  Searching Tv "<TV>"
     And clicking tv 
     And Window Handling
@@ -32,4 +32,4 @@ Feature: TV Validation Feature
       | TV | 
       | TCL |
       | Vu |
-      | KODAK |
+      | Coocaa |
