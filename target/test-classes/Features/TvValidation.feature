@@ -1,35 +1,42 @@
-#Author: your.email@your.domain.com
-#Keywords Summary :
-#Feature: List of scenarios.
-#Scenario: Business rule through list of steps with arguments.
-#Given: Some precondition step
-#When: Some key actions
-#Then: To observe outcomes or validation
-#And,But: To enumerate more Given,When,Then steps
-#Scenario Outline: List of steps for data-driven as an Examples and <placeholder>
-#Examples: Container for s table
-#Background: List of steps run before each of the scenarios
-#""" (Doc Strings)
-#| (Data Tables)
-#@ (Tags/Labels):To group Scenarios
-#<> (placeholder)
-#""
-## (Comments)
-#Sample Feature Definition Template
-
+@TV
 Feature: TV Validation Feature
   I want to use this template for my feature file
 
-  Scenario Outline: TV Validation scenario
+  Background: 
     Given Flipkart launch
     And sigin "9842642468", "aa"
-    When  Searching Tv "<TV>"
-    And clicking tv 
+
+  Scenario: Tv-1 Validation scenario
+    When Searching Tv "realme"
+    And clicking tv
+    And Window Handling
+    Then browser closee
+
+  Scenario: Tv-2 Validation scenario
+    When Searching Tv with oneD list
+      | Mi | LG | SAMSUNG |
+    And clicking tv
+    And Window Handling
+    Then browser closee
+
+  
+  Scenario: Tv-3 Validation scenario
+    When Searching Tv with oneD map
+      | 1 | Nokia   |
+      | 2 | OnePlus |
+      | 3 | Intex   |
+    And clicking tv
+    And Window Handling
+    Then browser closee
+
+  Scenario Outline: TV-4 Validation scenario
+    When Searching Tv "<TV>"
+    And clicking tv
     And Window Handling
     Then browser closee
 
     Examples: 
-      | TV | 
-      | TCL |
-      | Vu |
+      | TV     |
+      | TCL    |
+      | Vu     |
       | Coocaa |

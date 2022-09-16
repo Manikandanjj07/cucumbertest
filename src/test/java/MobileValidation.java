@@ -48,7 +48,6 @@ public class MobileValidation {
 	@When("click first product")
 	public void click_first_product() {
 	 	driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-
 	 	System.out.println("SWITCHING TAB");
 	 	driver.findElement(By.xpath("(//a//div//div//div[contains(text(),'"+name+"')])[2]")).click();
 	 	}
