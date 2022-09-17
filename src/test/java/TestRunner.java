@@ -4,15 +4,12 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="src\\test\\resources\\Features\\TvValidation.feature",
+@CucumberOptions(features="src\\test\\resources\\Features",
 				
 				monochrome=true,
 				plugin="html:target",
 				dryRun=false,
-				tags="@TV")
-				
-				
-				
-
+				tags={"@Mobile","@TV"})
+			
 public class TestRunner {
 }

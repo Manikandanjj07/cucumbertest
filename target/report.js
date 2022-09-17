@@ -1,111 +1,83 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/test/resources/Features/TvValidation.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/test/resources/Features/MobileValidation.feature");
 formatter.feature({
-  "name": "TV Validation Feature",
-  "description": "  I want to use this template for my feature file",
+  "name": "Mobile Validation Feature",
+  "description": "",
   "keyword": "Feature",
   "tags": [
     {
-      "name": "@TV"
+      "name": "@Mobile"
     }
   ]
 });
-formatter.background({
-  "name": "",
+formatter.scenario({
+  "name": "Mobile Validation Scenario",
   "description": "",
-  "keyword": "Background"
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@Mobile"
+    }
+  ]
 });
 formatter.before({
   "status": "passed"
 });
 formatter.step({
-  "name": "Flipkart launch",
+  "name": "lauching Flipkart",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "TvValidation.flipkart_launch()"
+  "location": "MobileValidation.lauching_Flipkart()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "sigin \"9842642468\", \"aa\"",
+  "name": "login \"9842642468\", \"Prajinkuti\"",
   "keyword": "And "
 });
 formatter.match({
-  "location": "TvValidation.sigin(String,String)"
+  "location": "MobileValidation.login(String,String)"
 });
 formatter.result({
   "status": "passed"
 });
-formatter.scenario({
-  "name": "Tv-3 Validation scenario",
-  "description": "",
-  "keyword": "Scenario",
-  "tags": [
-    {
-      "name": "@TV"
-    },
-    {
-      "name": "@map"
-    }
-  ]
-});
 formatter.step({
-  "name": "Searching Tv with oneD map",
-  "rows": [
-    {
-      "cells": [
-        "1",
-        "Nokia"
-      ]
-    },
-    {
-      "cells": [
-        "2",
-        "OnePlus"
-      ]
-    },
-    {
-      "cells": [
-        "3",
-        "Intex"
-      ]
-    }
-  ],
+  "name": "search mobile \"iPhone\"",
   "keyword": "When "
 });
 formatter.match({
-  "location": "TvValidation.searching_Tv_with_oneD_map(DataTable)"
+  "location": "MobileValidation.search_mobile(String)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "clicking tv",
+  "name": "click first product",
   "keyword": "And "
 });
 formatter.match({
-  "location": "TvValidation.clicking_tv()"
+  "location": "MobileValidation.click_first_product()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Window Handling",
+  "name": "window handles",
   "keyword": "And "
 });
 formatter.match({
-  "location": "TvValidation.window_Handling()"
+  "location": "MobileValidation.window_handles()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "browser closee",
+  "name": "browser close",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "TvValidation.browser_closee()"
+  "location": "MobileValidation.browser_close()"
 });
 formatter.result({
   "status": "passed"
